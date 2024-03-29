@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 const Resetpassword = ({ baseURL }) => {
     const [username, setUsername] = useState('');
@@ -54,7 +55,7 @@ const Resetpassword = ({ baseURL }) => {
                     <br />
                     <button type='submit' >Reset Password</button>
                 </label>
-                <div>{responseMsg}<a href='/login'>Click here to go to Login page</a></div>
+                <div>{responseMsg}<Link to='/login'>Click here to go to Login page</Link></div>
             </form>
         </div>
 
