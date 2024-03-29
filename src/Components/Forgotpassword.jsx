@@ -2,18 +2,20 @@ import React, { useState } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 
-const Forgotpassword = ({baseURL}) => {
+const Forgotpassword = ({ baseURL }) => {
     const [username, setUsername] = useState('');
     const [responseMsg, setResponseMsg] = useState('')
-    
+
     // Sending the username as payload to the backend and generating the email
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const payload = {username};
+        const payload = { username };
         console.log(payload);
-        await axios.post(`${baseURL}forgotpassword`, payload)
+        const url = `${baseURL}forgotpassword`
+        console.log(url);
+        await axios.post(url, payload)
             .then((res) => setResponseMsg(res.data.message))
-        .catch((err) => console.log(err));
+            .catch((err) => console.log(err));
 
     }
     return (
@@ -25,7 +27,7 @@ const Forgotpassword = ({baseURL}) => {
                     <br />
                     <button type='submit'>Send Reset Password Link</button>
                 </label>
-                <div>{responseMsg}<Link to={'/login'}>Click here to go to Login page</Link></div>                
+                <div>{responseMsg}<Link to={'/login'}>Click here to go to Login page</Link></div>
             </form>
         </div>
     );
