@@ -13,9 +13,14 @@ const Forgotpassword = ({ baseURL }) => {
         console.log(payload);
         const url = `${baseURL}forgotpassword`
         console.log(url);
-        await axios.post(url, payload)
-            .then((res) => setResponseMsg(res.data.message))
-            .catch((err) => console.log(err));
+        try {
+            const res =  await axios.post(url, payload)
+                setResponseMsg(res.data.message)
+            } catch (error) {
+            console.error('Error sending reset password link:', error);
+            console.log(error);
+        }
+      
 
     }
     return (
