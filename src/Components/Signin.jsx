@@ -76,7 +76,7 @@ const Signin = ({ baseURL }) => {
                         <input name='location' placeholder='Location' value={location} onChange={(e) => setLocation(e.target.value)} className='h-10 font-normal pr-12 pl-2 py-2 border-2 border-solid border-blue-100 w-full shadow-xl rounded-md' required />
 
                     </label>
-                    <p className='mt-3 ms-auto text-white font-semibold'>Already have an account? <a href='/login' className='text-[#1E1E24] text-lg'>Login here</a> </p>
+                    <p className='mt-3 ms-auto text-white font-semibold'>Already have an account? <a href={'/login'} className='text-[#1E1E24] text-lg'>Login here</a> </p>
                     <button type='submit' className='mt-4 font-bold text-xl rounded-lg ms-auto me-auto bg-white shadow-xl w-36 p-2'>Sign up</button>
 
                 </form>

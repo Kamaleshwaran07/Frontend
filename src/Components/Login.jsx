@@ -65,9 +65,9 @@ const Login = ({baseURL}) => {
                         </div>
                         </label>
                         <div>{responseMsg}</div>
-                   <a href='/forgotpassword' className='font-semibold ms-auto text-white mt-4'>Forgot Password?</a>
+                   <a href={'/forgotpassword'} className='font-semibold ms-auto text-white mt-4'>Forgot Password?</a>
                     <button type='submit' className='mt-2 font-bold text-xl rounded-lg ms-auto me-auto bg-white shadow-xl w-36 p-2'>Login</button>
-                    <p className='mt-3 ms-auto text-white font-semibold'>Don't have an account? <a href='/signup' className='text-[#1E1E24] underline text-lg'>Sign up here</a> </p>
+                    <p className='mt-3 ms-auto text-white font-semibold'>Don't have an account? <a href={'/signup'} className='text-[#1E1E24] underline text-lg'>Sign up here</a> </p>
 
                 </div>
                 <div className='h-4/6 p-6 mt-28'>
