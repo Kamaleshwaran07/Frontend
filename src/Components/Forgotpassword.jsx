@@ -21,11 +21,11 @@ const Forgotpassword = ({baseURL}) => {
             Forgotpassword
             <form onSubmit={handleSubmit}>
                 <label name='username'>
-                    <input className='w-80' type='email' name='username' placeholder='Enter  your registered mail id' value={username} onChange={(e) => setUsername(e.target.value)} />
+                    <input className='w-80' type='email' name='username' placeholder='Enter your registered mail id' value={username} onChange={(e) => setUsername(e.target.value)} />
                     <br />
                     <button type='submit'>Send Reset Password Link</button>
                 </label>
-                <div>{responseMsg}<Link to='/login'>Click here to go to Login page</Link></div>                
+                <div>{responseMsg}<Link to={'/login'}>Click here to go to Login page</Link></div>                
             </form>
         </div>
     );
