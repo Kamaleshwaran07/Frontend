@@ -10,7 +10,7 @@ import Resetpassword from './Components/Resetpassword';
 
 const App = () => {
 
-  const baseURL = 'http://localhost:5000/api/users/';
+  const baseURL = 'https://passwordreset-woco.onrender.com/api/users/';
 
   return (
     <div>
