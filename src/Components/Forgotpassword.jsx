@@ -11,7 +11,7 @@ const Forgotpassword = ({baseURL}) => {
         e.preventDefault();
         const payload = {username};
         console.log(payload);
-        await axios.post(`${baseURL}forgotpassword/`, payload)
+        await axios.post(`${baseURL}forgotpassword`, payload)
             .then((res) => setResponseMsg(res.data.message))
         .catch((err) => console.log(err));
 
