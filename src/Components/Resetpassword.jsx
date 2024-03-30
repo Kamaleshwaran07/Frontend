@@ -20,6 +20,7 @@ const Resetpassword = ({ baseURL }) => {
             const {user} = res.data; // Extract userId and token from response
             setUserId(user._id); // Set userId in state
             setToken(user.token); // Set token in state
+        
         }
         catch (error) {
 
