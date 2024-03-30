@@ -10,7 +10,7 @@ import Resetpassword from './Components/Resetpassword';
 
 const App = () => {
 
-  const baseURL = 'https://passwordreset-woco.onrender.com';
+  const baseURL = 'https://passwordreset-woco.onrender.com/';
   // const baseURL = 'https://passwordreset-woco.onrender.com';
 
   return (
