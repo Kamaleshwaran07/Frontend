@@ -15,7 +15,7 @@ const Login = ({baseURL}) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const payloads = { username,password }
-        console.log(username, password)
+        // console.log(username, password)
         await axios.post(`${baseURL}signin/`, payloads)
             .then((res) => setResponseMsg(res.data.message)
             )
