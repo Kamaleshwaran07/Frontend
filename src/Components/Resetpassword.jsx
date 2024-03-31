@@ -64,7 +64,7 @@ const Resetpassword = ({ baseURL }) => {
                 <br />
                 <button className='mt-6 mb-2 font-bold text-md rounded-lg ms-12 bg-white shadow-xl p-2' type='submit' >Reset Password</button>
                 <Link className='pt-2 ms-6 text-lg font-semibold text-white decoration-sky-900 underline underline-offset-4' to='/login'>Click here to go to Login page</Link>
-                <div className='mb-2 mt-4 font-semibold ms-6 text-lg bg-white rounded-lg px-4 w-80'>{responseMsg}</div>
+                <div className='mb-2 mt-4 font-semibold ms-6 text-lg bg-white rounded-lg px-4 w-full'>{responseMsg}</div>
             </form>
 
         </div>
