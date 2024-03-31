@@ -24,16 +24,23 @@ const Forgotpassword = ({ baseURL }) => {
 
     }
     return (
-        <div>
-            Forgotpassword
-            <form onSubmit={handleSubmit}>
-                <label name='username'>
-                    <input className='w-80' type='email' name='username' placeholder='Enter your registered mail id' value={username} onChange={(e) => setUsername(e.target.value)} />
+        <div className='fixed left-1/3 top-1/3 me-auto p-2 drop-shadow-2xl w-2/5 border-2 rounded-lg h-2/6   border-solid border-slate-500 bg-green-500'>
+          
+                
+            <div className='text-4xl text-center'>Forgot Password</div>
+            <form onSubmit={handleSubmit} className='mt-4'>
+                    <label name='username' className='mt-6 font-semibold text-lg ms-3'>
+                        Username:
+                        <input className='h-10 font-normal ms-2  w-4/5 pr-12 pl-3 py-2 border-2 border-solid border-blue-100 shadow-xl rounded-md' type='email' name='username' placeholder='Enter your registered mail id' value={username} onChange={(e) => setUsername(e.target.value)} />
                     <br />
-                    <button type='submit'>Send Reset Password Link</button>
                 </label>
-                <div>{responseMsg}<Link to={'/login'}>Click here to go to Login page</Link></div>
+                    <button className='mt-6 font-bold text-xl rounded-lg ms-6 bg-white shadow-xl p-2' type='submit'>Send Reset Password Link</button>
+                        <Link className='pt-2 ms-6 text-lg font-semibold text-white decoration-sky-900 underline underline-offset-4' to={'/login'}>Click here to go to Login page</Link>
+                    <div className='mb-12 mt-4 font-semibold ms-6'>{responseMsg}
+                    </div>
             </form>
+            
+            
         </div>
     );
 };

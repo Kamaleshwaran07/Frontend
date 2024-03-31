@@ -77,7 +77,14 @@ const Login = ({baseURL}) => {
                     <img src='https://media.discordapp.net/attachments/1018124413176135700/1220017854460592158/Saly-10.png?ex=660d692b&is=65faf42b&hm=9f0278c31dba9c887340bceee445488c8cf86db7fae3e7dc6a8c5fe740b6ac69&=&format=webp&quality=lossless&width=670&height=670' className='login' />
 
 
-                </div>
+                    </div>
+                    <div>
+                        {responseMsg && (
+                            <div className='toast bg-blue-500 text-white py-2 px-4 rounded-md fixed top-16 right-5 transition duration-300'>
+                                {responseMsg}
+                            </div>
+                        )}
+                    </div>
             </div>
                 </form>
         </div>

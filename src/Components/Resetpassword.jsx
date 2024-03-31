@@ -17,10 +17,11 @@ const Resetpassword = ({ baseURL }) => {
 // Sending the username as payload to get the data about user
         try {
             const res = await axios.post(`${baseURL}getUserInfo/`, payload);
+            setResponseMsg(res.data.message);
             const {user} = res.data; // Extract userId and token from response
             setUserId(user._id); // Set userId in state
             setToken(user.token); // Set token in state
-        
+            
         }
         catch (error) {
 
@@ -41,23 +42,30 @@ const Resetpassword = ({ baseURL }) => {
 
     }
     return (
-        <div>
+        <div className='fixed left-1/3 top-1/3 me-auto p-2 drop-shadow-2xl w-2/5 border-2 rounded-lg h-auto   border-solid border-slate-500 bg-green-500'>
+            <div className='text-4xl text-center'>
             Reset Password
+            </div>
             <form onSubmit={handleSubmit} >
-                <label name='username'>
-                    <input className='w-80' type='email' name='username' placeholder='Enter  your registered mail id' value={username} onChange={(e) => setUsername(e.target.value)} />
+                <label className='ms-3 font-semibold text-lg' name='username'>
+                    Username:
+                </label>
                     <br />
-                    <button type='button' onClick={getUserId} >Check the username</button>
+                    <input className='h-10 font-normal ms-2  w-3/5 pr-12 pl-3 py-2 border-2 border-solid border-blue-100 shadow-xl rounded-md' type='email' name='username' placeholder='Enter  your registered mail id' value={username} onChange={(e) => setUsername(e.target.value)} />
+                    <button className='mt-2 mb-2 font-bold text-md rounded-lg ms-6 bg-white shadow-xl p-2' type='button' onClick={getUserId} >Check the username</button>
+                <br />
+                <label name='password' className='ms-3 font-semibold text-lg'>
+                    New Password:
+                    <br />
+                    <input className='h-10 font-normal ms-2  w-3/5 pr-12 pl-3 py-2 border-2 border-solid border-blue-100 shadow-xl rounded-md' type='password' name='password' placeholder='Enter your new password'
+                        value={password} onChange={(e) => setPassword(e.target.value)} />
                 </label>
                 <br />
-                <label name='password'>
-                    <input className='w-80' type='password' name='password' placeholder='Enter your new password'
-                        value={password} onChange={(e) => setPassword(e.target.value)} />
-                    <br />
-                    <button type='submit' >Reset Password</button>
-                </label>
-                <div>{responseMsg}<Link to='/login'>Click here to go to Login page</Link></div>
+                    <button className='mt-6 mb-2 font-bold text-md rounded-lg ms-12 bg-white shadow-xl p-2' type='submit' >Reset Password</button>
+                <Link className='pt-2 ms-6 text-lg font-semibold text-white decoration-sky-900 underline underline-offset-4' to='/login'>Click here to go to Login page</Link>
+                <div className='mb-2 mt-4 font-semibold ms-6 text-lg bg-white rounded-lg px-4 w-80'>{responseMsg}</div>
             </form>
+            
         </div>
 
     );
