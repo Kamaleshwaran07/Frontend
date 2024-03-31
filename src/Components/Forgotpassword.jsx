@@ -10,9 +10,9 @@ const Forgotpassword = ({ baseURL }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const payload = { username };
-        console.log(payload);
+        // console.log(payload);
         const url = `${baseURL}forgotpassword`
-        console.log(url);
+        // console.log(url);
         try {
             const res =  await axios.post(url, payload)
                 setResponseMsg(res.data.message)
