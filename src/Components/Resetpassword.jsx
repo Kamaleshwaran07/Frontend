@@ -19,7 +19,7 @@ const Resetpassword = ({ baseURL }) => {
             const res = await axios.post(`${baseURL}getUserInfo/`, payload);
             const  {user}  = res.data;
             // console.log(user);// Extract userId and token from response
-            setResponseMsg(user.message);
+            setResponseMsg(res.data.message);
             setUserId(user._id); // Set userId in state
             setToken(user.token); // Set token in state
 
