@@ -91,12 +91,13 @@ return (
 
 
         </div>
-       
+        <div>
+            {responseMsg && (
                 <div className='toast bg-blue-500 text-white py-2 px-4 rounded-md fixed top-16 right-5'>
                     {responseMsg}
                 </div>
-          
-    
+            )}
+        </div>
         
     </div>
 );
